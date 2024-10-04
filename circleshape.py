@@ -1,7 +1,9 @@
 import pygame
+from constants import *
+
 
 #Base class for game objects
-class CircleShap(pygame.sprite.Sprite):
+class CircleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
         if hasattr(self, "containers"):
             super().__init__(self.containers)
