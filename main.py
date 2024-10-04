@@ -2,6 +2,8 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+import sys
+
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -39,6 +41,10 @@ def main():
         for obs in updateable:
             obs.update(dt)
 
+        for ass in asteroids:
+            if ass.collision(my_player) == True:
+                sys.exit("Game over!")
+       
         screen.fill("black")
         
         for obs in drawable:
