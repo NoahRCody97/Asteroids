@@ -46,7 +46,13 @@ def main():
         for ass in asteroids:
             if ass.collision(my_player) == True:
                 sys.exit("Game over!")
+            for shot in shots:
+                if ass.collision(shot) == True:
+                    #ass.kill()
+                    shot.kill()
+                    ass.split()
        
+
         screen.fill("black")
         
         for obs in drawable:
